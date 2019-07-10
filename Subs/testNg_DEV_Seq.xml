@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="In_Sequential" verbose="1" thread-count="5" parallel="none">
+<parameter name="remoteURL" value=""/><!-- http://192.168.0.181:4444/wd/hub -->
+<listeners>
+	<listener class-name="com.testNgListener.CustomListener_HMap"/>
+</listeners>
+
+	<!-- ${environment} -->
+
+  <test name="Sequential_POC" >
+  <parameter name="environment" value="STAGING" />
+  <parameter name="browser" value="chrome"/>
+  <parameter name="platform" value=""/>
+		<parameter name="user" value="SSR"/>
+    <classes>
+        <class name="tests.Sequential">
+    
+    <methods>
+    	<include name="Profile_update"> </include>
+    </methods>
+    
+    </class>
+    </classes>
+  </test>   
+</suite>

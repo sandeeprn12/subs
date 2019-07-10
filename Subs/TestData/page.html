@@ -1,0 +1,301 @@
+<html>
+
+	<head>
+	
+	<title>Test Result History</title>
+	
+		 <style>
+            body {
+                font-family: calibri;
+                background-color: #DFDFDF;
+            }
+
+            h2 {
+                color: midnightblue;
+            }
+
+            a {
+                color: blue;
+                text-decoration: none;
+            }
+
+            table {
+                border: 1px solid #AAAAAA;
+            }
+
+            th {
+                border-bottom: 1px solid #AAAAAA;
+            }
+
+            tr {
+                background: aliceblue;
+            }
+
+            td {
+                border: 1px solid lightgray;
+                padding: 0px;
+                margin: 0px;
+            }
+
+            p {
+                max-height: 125px;
+                overflow: auto;
+            }
+ 			
+ 			table#dashboard{
+ 				width:420px;
+ 			} 
+
+            #dashboard td {
+                background-color: aliceblue;
+                font-family: monospace;
+                word-break: break-all;
+                font-size: smaller;
+            }
+
+            .dashboard-header {
+                border-radius: 4px;
+                padding: 1px 0px;
+                text-align: center;
+                font-weight: 600;
+            }
+
+            .cellText-center {
+                border-radius: 4px;
+                padding: 1px 5px;
+                text-align: center;
+            }
+
+            .properties-div {
+                border: solid black 0px;
+                margin: 0px;
+                padding: 0px;
+                width: max-content;
+                color: midnightblue;
+                text-align: left;
+            }
+
+            .properties-span {
+                border: solid black 0px;
+                margin: 5px;
+                padding: 3px;
+            }
+
+            .currentPage {
+                color: #000;
+                font-size: x-large;
+            }
+
+            span[class*='UAT'] {
+                border-radius: 4px;
+                padding: 1px;
+                background-color: blue;
+                color: white;
+            }
+
+            span[class*='PREPROD'] {
+                border-radius: 4px;
+                padding: 1px;
+                background-color: red;
+                color: white;
+            }
+
+            .prev {
+                border: 1px solid lightgray;
+                padding: 1px;
+                margin: 1px 5px;
+            }
+
+            .next {
+                border: 1px solid lightgray;
+                padding: 1px;
+                margin: 1px 5px;
+            }
+            .info{
+				    border: 0px solid black;
+					margin: 0px 0px -42px 15px;
+					padding: 0px 0px 0px 0px;
+			}
+			.dir{
+				float:left;
+			}
+			.up{
+			    border: 0px solid black;
+				margin: 0px 0px 0px 15px;
+				padding: 0px 0px 0px 0px;
+			}
+			.left{
+				border: 0px solid black;
+				margin: 10px 0px 0px -30px;
+				padding: 0px 0px 0px 0px;
+			}
+			.right{
+			    border: 0px solid black;
+				margin: 10px 0px 0px 0px;
+				padding: 0px 0px 0px 0px;
+			}
+			.down{
+				border: 0px solid black;
+				margin: 20px 0px 0px -29px;
+				padding: 0px 0px 0px 0px;
+			}
+			.round{
+				width: 44px;
+				height: 41px;
+				border: 0px solid grey;
+				position: fixed;
+				border-radius: 50%;
+				background: darkgray;
+				box-shadow: 0px 0px 10px 2px black;
+				color: white;
+				cursor: pointer;
+			}
+			.txt{
+				margin: 1px 1px 1px 60px;
+			}
+			.quickView{
+				max-height: 135px;
+    			overflow-y: auto;
+			}
+			
+            .pass {
+                color: green;
+            }
+
+            .info {
+                color: blue;
+            }
+
+            .fail {
+                color: red;
+            }
+
+            .fatal {
+                color: #B71C1C;
+            }
+
+            .warning {
+                color: orange;
+            }
+
+            .error {
+                color: #ec407a;
+            }
+
+            .skip {
+                color: brown;
+            }
+			
+        </style>
+	<head>
+
+
+	<body>
+	<div class='info'>
+		<div class="round">
+			<div class='dir up' onclick="window.scrollBy(0,-50)">
+				&uarr;
+			</div>
+			<div class='dir left'  onclick="loadPage('left')">
+				&larr;
+			</div>
+			<div class='dir right'  onclick="loadPage('right')">
+				&rarr;
+			</div>
+			<div class='dir down'  onclick="window.scrollBy(0,50)">
+				&darr;
+			</div>
+		</div>
+			
+		<div class='txt'>Use Keyboard keys to control the navigation</div>
+	</div>
+	<center>
+		<h2>IOTRON Test Result History</h2>
+		<i>Total rows <!-- TOTAL ROWS --> and Displaying <!-- PAGE ROWS --> rows per page.
+		<br/>
+		<!-- PREV -->
+		<!-- NEXT -->
+		<br/>
+		<!-- INSERT_TOP_PAGINATION -->
+		</i>
+
+
+		<table border='0'>
+
+			<tbody>
+			
+				<tr>
+					<td style='font-weight: bold; text-align: center;'>#</td>
+					<td style='font-weight: bold; text-align: center;'>Folder</td>
+					<td style='font-weight: bold; text-align: center;'>DashBoards</td>
+					<td style='font-weight: bold; text-align: center;'>Quick Report View</td>
+					<td style='font-weight: bold; text-align: center;'>Reports Link</td>
+				</tr>
+				
+				<!-- INSERT_ROW -->
+				
+			</tbody>
+			
+		</table>
+			
+		 <i>
+			 <br/>
+			<!-- PREV -->
+			<!-- NEXT -->
+			<br/>
+			<!-- INSERT_BOTTOM_PAGINATION -->
+		 </i>
+		 
+	 </body>
+	 
+	 
+	 <script>
+	 document.onkeydown = function(e) {
+		 e = e || window.event;
+		 switch(e.which || e.keyCode) 
+		 {
+			 case 37: 
+				loadPage('left');
+				break;
+			 case 38://up
+				window.scrollBy(0,-50)
+				break;
+			case 39: 
+				loadPage('right');
+				break;
+			 case 40: //down
+				window.scrollBy(0,50)
+				break;
+			 default: 
+				return; 
+		 }
+		 e.preventDefault(); 
+	 }
+	 
+	 function loadPage(leftOrRight) {
+		 if(leftOrRight=='left'){
+			 var elem=getElementsByXPath("//span[normalize-space(@class)='prev']/..");
+			 if(elem.length>0){
+				 var href=elem[0].getAttribute('href');
+				window.location.href = href;
+			}
+		 } else {
+			 var elem=getElementsByXPath("//span[normalize-space(@class)='next']/..");
+			 if(elem.length>0){
+				var href=elem[0].getAttribute('href');
+				window.location.href = href;
+			 }
+		 }
+	 }
+	 
+	 function getElementsByXPath(xpath, parent) {
+		 let results = [];
+		 let query = document.evaluate(xpath, parent || document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+		 for (let i = 0, length = query.snapshotLength; i < length; ++i) {
+			results.push(query.snapshotItem(i));
+		 }
+		return results;
+	 }
+	 </script>
+	 
+ </html>
