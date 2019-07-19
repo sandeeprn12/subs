@@ -27,6 +27,9 @@ public class LoginPage {
 	@FindBy(id="login")
 	private WebElement button_Login;
 
+	@FindBy(xpath="//a[contains(. , 'Log Out')]")
+	private WebElement button_Logout;
+
 	public static String title="User Login";
 	public LoginPage(){
 		com=new SeleniumMethods();
@@ -34,13 +37,9 @@ public class LoginPage {
 	}
 
 	public void logout(){
-		String baseUrl = new DataTable(Constant.getTestDataFilePath(), Constant.getEnvironmentInfoSheet()).getValue(1, "url");
-		com.navigateTo(baseUrl);
-		if(com.isAlertPresent()){
-			CustomReporter.report_ExitCurrentNode(STATUS.INFO,"Leave site? Alert displayed "+com.closeAlertAndGetItsText(true));
-		}
+		com.click(button_Logout,"Logout Link");
 		
-		if(com.verifyPageTitle(title)){
+		if(com.verifyPageTitle("Subs For You")){
 			CustomReporter.report_ExitCurrentNode(STATUS.PASS, "Logout succeed");
 		}else{
 			CustomReporter.report_ExitCurrentNode(STATUS.FAIL, "Logout failed");

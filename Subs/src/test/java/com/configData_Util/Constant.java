@@ -57,7 +57,7 @@ public class Constant {
 	 * {@code enableMailNotification} : If set true, then framework will start 
 	 * sending the custom email notification after completion of execution
 	 */
-	public static final boolean enableMailNotification = false;
+	public static final boolean enableMailNotification = true;
 
 	/**
 	 * This constant controls how many old reports will be stored, once

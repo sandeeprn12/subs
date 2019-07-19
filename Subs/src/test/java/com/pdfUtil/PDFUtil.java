@@ -22,4 +22,14 @@ public class PDFUtil {
 		return data.toString();
 	}
 	
+	public static void main(String[] args) {
+		
+		String result = PDFUtil.getText("/Users/macmini/Desktop/Test doc.pdf");
+		
+		System.out.println(result);
+		
+		//
+	}
+	
 }
+

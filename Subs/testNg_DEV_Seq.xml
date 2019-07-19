@@ -15,7 +15,9 @@
     <classes>
         <class name="tests.Sequential">
     
-    <methods>
+    
+      <methods>
+    	
     	<include name="Profile_update"> </include>
     </methods>
     

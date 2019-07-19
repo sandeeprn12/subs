@@ -54,10 +54,10 @@ public class MailUtil {
 	 * @author shailendra.rajawat 03-May-2019
 	 * */ 
 	private static String getHost(){
-		String host = "smtp.office365.com";
+		String host = "smtp.gmail.com";
 		String platform = Util.getOSName();
 		if(!platform.toLowerCase().contains("win")){
-			host = "10.184.40.100"; 
+			host = "smtp.gmail.com"; 
 		}
 		return host;
 	}
@@ -70,10 +70,10 @@ public class MailUtil {
 	 * @author shailendra.rajawat 03-May-2019
 	 * */ 
 	private static String getPort_Send(){
-		String host = "587";
+		String host = "465";
 		String platform = Util.getOSName();
 		if(!platform.toLowerCase().contains("win")){
-			host = "25"; 
+			host = "465"; 
 		}
 		return host;
 	}
