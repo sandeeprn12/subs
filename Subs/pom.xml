@@ -22,7 +22,7 @@
 		<poi-ooxml.version>3.17-beta1</poi-ooxml.version>
 		<javax-mail.version>1.4</javax-mail.version>
 		<extentreports.version>3.0.6</extentreports.version>
-		<itextpdf.version>5.5.10</itextpdf.version>
+		<itextpdf.version>5.5.12</itextpdf.version>
 		<commonscsv.version>1.5</commonscsv.version>
 		<jsonsimple.version>1.1</jsonsimple.version>
 		<!--Plugin Versions -->
